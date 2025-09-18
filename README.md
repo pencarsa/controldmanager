@@ -161,7 +161,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🎨 Screenshots
 
-*Coming soon - Screenshots of the beautiful interface*
+### Main Interface
+![ControlD Manager Interface](screenshots/controld-manager-interface.png)
+
+*The clean and intuitive ControlD Manager interface showing profile status, quick actions, and re-enable functionality*
+
+**Key Features Shown:**
+- 🟢 **Online Status**: Real-time connection indicator
+- 👤 **Profile Display**: Current active profile (NonserviaM)
+- 🔴 **Status Badge**: Clear disabled/enabled state indication
+- 🔵 **Re-enable Button**: One-click profile reactivation
+- ⚙️ **Settings Access**: Easy configuration management
+- 🚪 **Quit Option**: Clean app termination
+- 📱 **Version Info**: Enhanced v2.0 indicator
 
 ## ⭐ Acknowledgments
 
