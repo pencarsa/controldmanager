@@ -56,6 +56,12 @@ credentials/
 .vscode/
 .idea/
 
+# Cleanup - Removed Files
+integrate_enhanced_features.sh
+ENHANCED_FEATURES*.md
+create_final_professional_build.sh
+create_professional_build.sh
+
 # macOS
 .DS_Store
 .AppleDouble
