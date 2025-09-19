@@ -1,6 +1,6 @@
 # ControlD MenuBar
 
-A sleek macOS menu bar application for managing ControlD profiles and DNS filtering through the ControlD API.
+A sleek macOS menu bar application for managing ControlD profiles and DNS filtering through the ControlD API. Website [Here](https://pencarsa.github.io/controldmanager-site/)
 
 ## 🚀 Features
 
