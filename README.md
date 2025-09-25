@@ -1,90 +1,43 @@
 # ControlD MenuBar Manager
 
-A professional macOS menu bar application for managing ControlD DNS filtering profiles with enterprise-grade architecture and modern Swift development practices.
+A macOS menu bar application for managing ControlD DNS filtering profiles.
 
 [![macOS](https://img.shields.io/badge/macOS-11.0+-blue.svg)](https://www.apple.com/macos/)
 [![Swift](https://img.shields.io/badge/Swift-5.5+-orange.svg)](https://swift.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Architecture](https://img.shields.io/badge/Architecture-MVVM-purple.svg)](#architecture)
 
-## 🚀 Features
+## Features
 
-### Core Functionality
-- **🛡️ Menu Bar Integration**: Native macOS menu bar interface with dynamic status icons
-- **🔐 Secure API Management**: Keychain storage with device-specific encryption
-- **📋 Profile Management**: Dynamic profile discovery and switching
-- **⏱️ Custom Timer Options**: Flexible disable durations (15min to 4hr + custom)
-- **🔄 Real-time Status**: Live profile status monitoring and updates
+- **Menu Bar Integration**: Quick access from your macOS menu bar
+- **Secure API Management**: Safe keychain storage for API tokens
+- **Profile Management**: Easy switching between ControlD profiles
+- **Custom Timers**: Disable profiles for custom durations
+- **Real-time Status**: Live profile monitoring with visual indicators
 
-### Advanced Features
-- **🏗️ Modern Architecture**: MVVM pattern with dependency injection
-- **⚡ Performance Optimized**: Network request debouncing and response caching
-- **🔍 Smart Validation**: Real-time API key validation with format checking
-- **📊 Performance Monitoring**: Built-in metrics collection and monitoring
-- **🎨 Native Design**: SwiftUI interface following Apple's Human Interface Guidelines
+## Requirements
 
-## 📋 Requirements
+- macOS 11.0 or later
+- ControlD account with API access
 
-- **macOS**: 11.0 Big Sur or later
-- **Architecture**: Universal Binary (Intel + Apple Silicon)
-- **Account**: ControlD account with API access
-- **Development**: Xcode 13+ (for building from source)
+## Installation
 
-## 📦 Installation
-
-### Quick Install (Recommended)
 ```bash
 git clone https://github.com/pencarsa/controldmanager.git
 cd controldmanager
 ./install_simple.sh
 ```
 
-### Manual Build
-```bash
-# Clone repository
-git clone https://github.com/pencarsa/controldmanager.git
-cd controldmanager
+## Setup
 
-# Build application
-./build.sh
+1. Get your API token from [ControlD Dashboard](https://controld.com/dashboard) → Account Settings → API
+2. Launch the app from your menu bar (shield icon)
+3. Click Settings, enter your API token, and select a profile
 
-# Install to Applications
-cp -r "./ControlDMenuBar/build/Build/Products/Release/ControlD.app" /Applications/
-```
+## Usage
 
-## 🔑 Setup
-
-### 1. Get Your API Token
-- Log into [ControlD Dashboard](https://controld.com/dashboard)
-- Navigate to **Account Settings** → **API**
-- Generate a new API token (starts with `api.`)
-
-### 2. Configure the Application
-- Launch ControlD from your menu bar (look for shield icon)
-- Click **Settings** button
-- Enter your API token in the secure field
-- Click **Validate API Key** for verification
-- Select your desired profile from the dropdown
-- Click **Save** to store configuration securely
-
-### 3. Verify Setup
-- Close settings window
-- Check that profile name appears in the main interface
-- Test disable/enable functionality
-
-## 🎯 Usage
-
-### Daily Operations
-- **Single-Click Access**: Click shield icon in menu bar
-- **Profile Control**: Disable for 30 minutes or custom duration
-- **Quick Re-enable**: Cancel timer and re-enable instantly
-- **Status Monitoring**: Visual indicators show current profile state
-
-### Advanced Features
-- **Custom Timers**: Set specific disable durations
-- **Profile Switching**: Change active profiles on-the-fly
-- **Performance Monitoring**: Built-in metrics and optimization
-- **Secure Storage**: All credentials encrypted in macOS Keychain
+- Click the menu bar icon to open the control panel
+- Disable profiles for custom durations or re-enable instantly
+- Switch between profiles as needed
 
 ## 🛡️ Security Features
 
