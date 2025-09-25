@@ -49,19 +49,33 @@ secrets/
 credentials/
 *.key
 *.token
+api_keys/
+private/
 
 # Personal/Local Files
 *.local
 *.personal
 .vscode/
 .idea/
+backup_*/
+*_backup_*/
+test_*.swift
+*_test.swift
 
-# Cleanup - Removed Files
-integrate_enhanced_features.sh
-ENHANCED_FEATURES*.md
-create_final_professional_build.sh
-create_professional_build.sh
-add_enhanced_files.sh
+# Development and Testing
+*.log
+logs/
+temp/
+tmp/
+.cache/
+
+# Development Files (not for public release)
+*_IMPLEMENTATION.md
+*_PLAN.md
+implement_*.sh
+integrate_*.sh
+create_*.sh
+add_*.sh
 
 # macOS
 .DS_Store
