@@ -443,10 +443,17 @@ class NetworkDiagnosticsService: ObservableObject {
         
         do {
             // Simulate speed test (in real implementation, this would use a proper speed test service)
+            // Note: Using non-cryptographic random for UI simulation only - not security-sensitive
+            // These random values are for mock data display purposes, not cryptographic operations
+            // nosemgrep
             let downloadSpeed = Double.random(in: 10...100) // Mbps
+            // nosemgrep
             let uploadSpeed = Double.random(in: 5...50) // Mbps
+            // nosemgrep
             let latency = Double.random(in: 10...100) // ms
+            // nosemgrep
             let jitter = Double.random(in: 1...10) // ms
+            // nosemgrep
             let packetLoss = Double.random(in: 0...2) // percentage
             
             let result = SpeedTestResult(
