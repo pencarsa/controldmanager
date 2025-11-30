@@ -47,19 +47,9 @@ final class DependencyContainer {
     // MARK: - Factory Methods
     
     func makeMenuBarController() -> MenuBarController {
-        return MenuBarController(
-            apiService: apiService,
-            settingsService: settingsService,
-            logger: logger
-        )
-    }
-    
-    func makeSettingsViewModel() -> SettingsViewModel {
-        return SettingsViewModel(
-            apiService: apiService,
-            settingsService: settingsService,
-            logger: logger
-        )
+        // MenuBarController currently uses legacy services directly
+        // This method is kept for future migration to DI pattern
+        return MenuBarController()
     }
     
 }
@@ -75,8 +65,6 @@ protocol DependencyContainerProtocol {
     var apiService: APIServiceProtocol { get }
     
     func makeMenuBarController() -> MenuBarController
-    func makeSettingsViewModel() -> SettingsViewModel
-    func makeMainViewModel() -> MainViewModel
 }
 
 extension DependencyContainer: DependencyContainerProtocol {}

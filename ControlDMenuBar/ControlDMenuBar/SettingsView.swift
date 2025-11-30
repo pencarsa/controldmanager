@@ -148,29 +148,47 @@ struct SettingsView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     // Only show load button if profiles are not loaded
                     if settingsManager.availableProfiles.isEmpty {
-                        HStack {
-                            Button("Load Profiles") {
+                        VStack(spacing: 16) {
+                            Image(systemName: "server.rack")
+                                .font(.system(size: 40))
+                                .foregroundColor(.secondary)
+                                .padding(.top, 8)
+                            
+                            Text("No Profiles Loaded")
+                                .font(.headline)
+                            
+                            Text(settingsManager.hasValidApiKey ? "Click below to fetch your profiles from ControlD." : "Enter a valid API key to load profiles.")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal)
+                            
+                            if !profilesError.isEmpty {
+                                Label(profilesError, systemImage: "exclamationmark.triangle")
+                                    .font(.caption)
+                                    .foregroundColor(.red)
+                            }
+                            
+                            Button(action: {
                                 loadProfiles()
+                            }) {
+                                HStack {
+                                    if isLoadingProfiles {
+                                        ProgressView()
+                                            .scaleEffect(0.5)
+                                    }
+                                    Text("Load Profiles")
+                                }
+                                .frame(minWidth: 120)
                             }
                             .disabled(!settingsManager.hasValidApiKey || isLoadingProfiles)
                             .buttonStyle(.borderedProminent)
-                            
-                            if isLoadingProfiles {
-                                ProgressView()
-                                    .progressViewStyle(CircularProgressViewStyle())
-                                    .scaleEffect(0.8)
-                            }
+                            .controlSize(.large)
                         }
-                        
-                        if !profilesError.isEmpty {
-                            Text(profilesError)
-                                .font(.caption)
-                                .foregroundColor(.red)
-                        } else if settingsManager.hasValidApiKey {
-                            Text("Click 'Load Profiles' to fetch your ControlD profiles")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color(.controlBackgroundColor).opacity(0.5))
+                        .cornerRadius(12)
                     } else {
                         // Profiles are loaded, show them
                         VStack(alignment: .leading, spacing: 12) {

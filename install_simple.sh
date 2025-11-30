@@ -5,10 +5,11 @@
 echo "📱 Installing ControlD to /Applications..."
 
 # Find the built app
-BUILT_APP="./ControlDMenuBar/build/Release/ControlDMenuBar.app"
+BUILT_APP="./ControlDMenuBar/build/Build/Products/Release/ControlD.app"
 
 if [ ! -d "$BUILT_APP" ]; then
-    echo "❌ Built app not found. Please run ./build.sh first."
+    echo "❌ Built app not found at: $BUILT_APP"
+    echo "Please run ./build.sh first."
     exit 1
 fi
 

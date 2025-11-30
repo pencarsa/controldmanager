@@ -67,119 +67,28 @@ cp -r "./ControlDMenuBar/build/Build/Products/Release/ControlD.app" /Application
 - **Status Indicators**: See which profiles are currently disabled
 - **One-Click Selection**: Easy profile switching
 
-## 🛡️ Security Features
+## 🛡️ Security
 
-- **Keychain Integration**: API tokens stored securely in macOS Keychain
-- **Certificate Validation**: HTTPS certificate pinning for API calls
-- **Token Validation**: Real-time API key format and connectivity validation
-- **Timeout Protection**: Network request timeouts prevent hanging
-- **Memory Safety**: Secure token handling with automatic cleanup
-
-## 🏗️ Architecture
-
-Built with modern Swift practices:
-- **SwiftUI**: Native macOS interface
-- **Combine**: Reactive programming for real-time updates
-- **URLSession**: Secure networking with custom configuration
-- **Keychain Services**: Encrypted credential storage
-- **UserDefaults**: Non-sensitive setting persistence
-
-## 📁 Project Structure
-
-```
-controld-menubar/
-├── ControlDMenuBar/
-│   ├── ControlDMenuBar.xcodeproj/
-│   └── ControlDMenuBar/
-│       ├── ContentView.swift         # Main UI
-│       ├── SettingsView.swift        # Settings interface  
-│       ├── MenuBarController.swift   # Business logic
-│       ├── ControlDService.swift     # API client
-│       ├── SettingsManager.swift     # Configuration
-│       └── Info.plist               # App metadata
-├── build.sh                         # Build automation
-├── install_simple.sh               # Easy installer
-└── .gitignore                      # Git exclusions
-```
+- Keychain integration for API tokens
+- Secure memory handling
+- Biometric authentication support
+- Audit logging
+- Network security
 
 ## 🔨 Development
 
-### Prerequisites
 ```bash
-# Required tools
-xcode-select --install
+./build.sh  # Build app
+⌘U          # Run tests
 ```
 
-### Building
-```bash
-# Clean build
-./build.sh
-
-# Development build  
-xcodebuild -project ControlDMenuBar/ControlDMenuBar.xcodeproj -scheme ControlDMenuBar -configuration Debug
-```
-
-### Code Style
-- Swift 5.5+ with modern concurrency
-- SwiftUI for all interface components
-- Protocol-oriented design patterns
-- Comprehensive error handling
-
-## 🤝 Contributing
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
-
-### Guidelines
-- Follow Swift style guidelines
-- Add tests for new functionality
-- Update documentation as needed
-- Ensure security best practices
+See [ARCHITECTURE.md](ARCHITECTURE.md) for details.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](LICENSE)
 
-## 🆘 Support
+## Support
 
-### Getting Help
-- **Issues**: [GitHub Issues](https://github.com/yourusername/controld-menubar/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/controld-menubar/discussions)
-- **ControlD API**: [ControlD Support](https://controld.com/support)
-
-### Troubleshooting
-
-| Issue | Solution |
-|-------|----------|
-| Invalid API Token | Verify token in ControlD dashboard |
-| No Profiles Loading | Check internet connection and API permissions |
-| App Won't Launch | Ensure macOS 11.0+ and try rebuilding |
-| Settings Won't Save | Check Keychain access permissions |
-
-## 🎨 Screenshots
-
-### Main Interface
-![ControlD Manager Interface](screenshots/controld-manager-interface.png)
-
-*The ControlD Manager interface showing profile status and quick actions*
-
-**Interface Features:**
-- 🟢 **Online Status**: Real-time connection indicator  
-- 👤 **Profile Display**: Current active profile (NonserviaM)
-- 🔴 **Status Badge**: Clear disabled/enabled state indication
-- 🔵 **Re-enable Button**: One-click profile reactivation
-- ⚙️ **Settings Access**: Easy configuration management
-- 📱 **Version Info**: Enhanced v2.0 indicator
-
-## ⭐ Acknowledgments
-
-- [ControlD](https://controld.com) for the powerful DNS filtering API
-- The Swift community for excellent development tools
-- Contributors who help improve this project
-
----
-
-**Made with ❤️ for the macOS community**
+- Issues: [GitHub Issues](https://github.com/yourusername/controld-menubar/issues)
+- ControlD: [controld.com/support](https://controld.com/support)

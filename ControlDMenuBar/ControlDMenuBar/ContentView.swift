@@ -3,6 +3,7 @@ import AppKit
 
 struct ContentView: View {
     @EnvironmentObject var menuBarController: MenuBarController
+    @ObservedObject var networkMonitor = NetworkMonitor.shared
     @State private var isLoading = false
     @State private var lastActionStatus: String = "Ready"
     @State private var showStatus = false
@@ -37,12 +38,21 @@ struct ContentView: View {
                 
                 // Network status indicator
                 HStack(spacing: 4) {
-                    Image(systemName: "wifi")
-                        .font(.caption)
-                        .foregroundColor(.green)
-                    Text("Online")
-                        .font(.caption2)
-                        .foregroundColor(.secondary)
+                    if networkMonitor.status.isConnected {
+                        Image(systemName: "wifi")
+                            .font(.caption)
+                            .foregroundColor(.green)
+                        Text("Online")
+                            .font(.caption2)
+                            .foregroundColor(.secondary)
+                    } else {
+                        Image(systemName: "wifi.slash")
+                            .font(.caption)
+                            .foregroundColor(.red)
+                        Text("Offline")
+                            .font(.caption2)
+                            .foregroundColor(.red)
+                    }
                 }
                 .padding(.horizontal, 6)
                 .padding(.vertical, 2)

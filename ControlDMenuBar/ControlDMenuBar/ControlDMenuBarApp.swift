@@ -5,7 +5,7 @@ struct ControlDMenuBarApp: App {
     @StateObject private var menuBarController = MenuBarController()
     
     var body: some Scene {
-        MenuBarExtra("ControlD", systemImage: "shield.fill") {
+        MenuBarExtra("ControlD", systemImage: menuBarController.currentStatusIcon) {
             ContentView()
                 .environmentObject(menuBarController)
         }
