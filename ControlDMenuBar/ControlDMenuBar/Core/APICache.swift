@@ -19,6 +19,7 @@ final class APICache {
     private var cache: [String: CacheEntry] = [:]
     private let queue = DispatchQueue(label: "com.controld.menubar.cache", attributes: .concurrent)
     private let defaultTTL: TimeInterval
+    private var cleanupTimer: Timer?
     
     // MARK: - Initialization
     
@@ -98,7 +99,7 @@ final class APICache {
     
     private func startCleanupTimer() {
         // Clean expired entries every 5 minutes
-        Timer.scheduledTimer(withTimeInterval: 300, repeats: true) { [weak self] _ in
+        cleanupTimer = Timer.scheduledTimer(withTimeInterval: 300, repeats: true) { [weak self] _ in
             self?.removeExpired()
         }
     }

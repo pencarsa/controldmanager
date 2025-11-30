@@ -239,7 +239,9 @@ struct ContentView: View {
     }
     
     private var statusSubtitle: String {
-        if menuBarController.needsConfiguration {
+        if !networkMonitor.status.isConnected {
+            return "Network Offline"
+        } else if menuBarController.needsConfiguration {
             return "Setup required"
         } else {
             return "\(menuBarController.settingsManager.selectedProfileName) • Online"

@@ -5,9 +5,11 @@ struct ControlDMenuBarApp: App {
     @StateObject private var menuBarController = MenuBarController()
     
     var body: some Scene {
-        MenuBarExtra("ControlD", systemImage: menuBarController.currentStatusIcon) {
+        MenuBarExtra {
             ContentView()
                 .environmentObject(menuBarController)
+        } label: {
+            Image(systemName: menuBarController.currentStatusIcon)
         }
         .menuBarExtraStyle(.window)
     }
